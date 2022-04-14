@@ -2,19 +2,20 @@
 #   Written By Dan Monaghan 04/2022 onwards
 #
 
-class Project: 
+class Project:
     def __init__(self, name, version, author, github) -> None:
         self.name = name
         self.version = version
         self.author = author
         self.github = github
 
+
 project = Project(
-    'CssUtil', 
-    0.2, 
-    'Dan Monaghan', 
+    'CssUtil',
+    0.2,
+    'Dan Monaghan',
     'https://github.com/mowglixx/cssutil'
-    )
+)
 
 # setup alphabet constant for filename checking
 ALPHABET = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
@@ -39,7 +40,7 @@ class_list = [
     '#### Author: ', project.author, ' - ',
     '[Github](', project.github, ')\n',
     '## Class List\n\nThis is the auto generated class list',
-    ]
+]
 css += '''
 :root {
     /* Light and dark colors */
@@ -109,6 +110,7 @@ sizes = [
     6.5,
     9]
 measuring_step = 0.5
+
 
 class CSS_Selector:
 
@@ -258,7 +260,7 @@ class_list.append('\n\n## Colours / colors\n')
 for (hue_color, color) in hue_colors.items():
     class_list.append(f'\n### {color.title()}\n')
     css = css + f'\n/*[ {color} ]*/'
-    
+
     shades = range(1000, 0, -100)
     for shade in shades:
         # if the shade is not 0 or 1000
